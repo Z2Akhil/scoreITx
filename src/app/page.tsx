@@ -58,10 +58,6 @@ export default function Home() {
                     <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div className="grid items-center gap-12 lg:grid-cols-2">
                             <div className="max-w-2xl text-center lg:text-left">
-                                <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-indigo-50/50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-indigo-700">
-                                    <Sparkles size={14} className="animate-pulse" />
-                                    <span>The future of personalized learning</span>
-                                </div>
                                 <h1 className="text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl xl:text-7xl">
                                     Unlock your <br />
                                     <span className="bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">
