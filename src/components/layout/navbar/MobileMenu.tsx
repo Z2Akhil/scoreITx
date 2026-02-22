@@ -5,6 +5,8 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 
+import { AnimatedText } from "@/components/ui/animated-text";
+
 const N_LINKS = [
     { name: "Find Tutors", href: "/tutors" },
     { name: "How it Works", href: "/how-it-works" },
@@ -39,13 +41,13 @@ export default function MobileMenu() {
                                 key={link.name}
                                 href={link.href}
                                 onClick={() => setIsOpen(false)}
-                                className={`text-base font-medium px-4 py-3 rounded-xl transition-colors flex items-center gap-3 ${isActive
+                                className={`group/m-link text-base font-medium px-4 py-3 rounded-xl transition-colors flex items-center gap-3 ${isActive
                                     ? "bg-[#EFF4FF] text-[#1852CC]"
                                     : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
                                     }`}
                             >
                                 <span className={`w-1.5 h-1.5 bg-[#1852CC] rounded-full transition-opacity ${isActive ? "opacity-100" : "opacity-0"}`} />
-                                {link.name}
+                                <AnimatedText text={link.name} groupHoverClass="group-hover/m-link" />
                             </Link>
                         );
                     })}
@@ -56,16 +58,16 @@ export default function MobileMenu() {
                         <Link
                             href="/login"
                             onClick={() => setIsOpen(false)}
-                            className="text-center font-semibold text-slate-700 py-3 rounded-xl hover:bg-slate-50 transition-colors"
+                            className="group/m-login text-center font-semibold text-slate-700 py-3 rounded-xl hover:bg-slate-50 transition-colors flex items-center justify-center"
                         >
-                            Log in
+                            <AnimatedText text="Log in" groupHoverClass="group-hover/m-login" />
                         </Link>
                         <Link
                             href="/join"
                             onClick={() => setIsOpen(false)}
-                            className="text-center font-semibold text-white bg-[#1852CC] py-3 rounded-xl hover:bg-blue-700 transition-colors shadow-md shadow-blue-200"
+                            className="group/m-join text-center font-semibold text-white bg-[#1852CC] py-3 rounded-xl hover:bg-blue-700 transition-colors shadow-md shadow-blue-200 flex items-center justify-center"
                         >
-                            Join for free
+                            <AnimatedText text="Join for free" groupHoverClass="group-hover/m-join" />
                         </Link>
                     </div>
                 </div>

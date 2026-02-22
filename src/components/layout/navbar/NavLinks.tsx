@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { AnimatedText } from "@/components/ui/animated-text";
 
 const N_LINKS = [
     { name: "Home", href: "/" },
@@ -28,7 +29,7 @@ export default function NavLinks() {
                         href={link.href}
                         onMouseEnter={() => setHoveredPath(link.href)}
                         onMouseLeave={() => setHoveredPath(null)}
-                        className={`relative px-5 py-2.5 rounded-full text-[14px] font-medium transition-all duration-300 ease-in-out flex items-center gap-2 ${isActive
+                        className={`group/link relative px-5 py-2.5 rounded-full text-[14px] font-medium transition-all duration-300 ease-in-out flex items-center gap-2 ${isActive
                                 ? "bg-white text-[#1852CC] shadow-sm"
                                 : isHovered
                                     ? "bg-transparent text-slate-900"
@@ -40,7 +41,7 @@ export default function NavLinks() {
                             className={`w-1.5 h-1.5 rounded-full bg-[#1852CC] transition-all duration-300 ${isActive ? "opacity-100 scale-100" : "opacity-0 scale-0 w-0"
                                 }`}
                         />
-                        {link.name}
+                        <AnimatedText text={link.name} groupHoverClass="group-hover/link" />
                     </Link>
                 );
             })}
