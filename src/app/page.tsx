@@ -17,9 +17,7 @@ export default function Home() {
             <Navbar />
 
             <main className="pt-16">
-                {/* Hero Section */}
                 <section className="relative overflow-hidden py-20 lg:py-32">
-                    {/* Abstract background elements */}
                     <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 blur-3xl opacity-20">
                         <div className="h-96 w-96 rounded-full bg-indigo-600"></div>
                     </div>
