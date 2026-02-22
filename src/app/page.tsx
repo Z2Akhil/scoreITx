@@ -5,6 +5,8 @@ import {
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import TestSeriesSection from "@/components/home/TestSeriesSection";
+import KeyFeatures from "@/components/layout/key-features/KeyFeatures";
+import { AnimatedText } from "@/components/ui/animated-text";
 
 export default function Home() {
     return (
@@ -26,9 +28,11 @@ export default function Home() {
 
                     <div className="relative z-10 flex flex-col items-center max-w-4xl mx-auto">
 
-                        <div className="flex items-center gap-3 bg-[#E9EFFC] rounded-full py-2 px-5 pr-2 mb-10 border border-white/50 shadow-sm transition-transform hover:-translate-y-1 cursor-pointer">
-                            <span className="text-[#1852CC] font-semibold text-sm pl-2">Get Started Now</span>
-                            <div className="bg-[#1852CC] rounded-full p-1.5 flex items-center justify-center">
+                        <div className="group/hero-btn flex items-center gap-3 bg-white hover:bg-slate-50 rounded-full py-2 px-5 pr-2 mb-10 border border-blue-100 shadow-sm transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+                            <div className="text-[#1852CC] font-semibold text-sm pl-2">
+                                <AnimatedText text="Get Started Now" groupHoverClass="group-hover/hero-btn" />
+                            </div>
+                            <div className="bg-[#1852CC] rounded-full p-1.5 flex items-center justify-center transition-transform duration-300 group-hover/hero-btn:rotate-45">
                                 <ArrowUpRight size={16} className="text-white" />
                             </div>
                         </div>
@@ -61,48 +65,28 @@ export default function Home() {
                                 </div>
                             </div>
                             <p className="text-sm text-slate-500 font-medium">
-                                Trusted to use by active students over 140 countries
+                                Trusted to use by active students over 140 countries</p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Features Section */}
+                <section className="bg-slate-50 py-24">
+                    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                        <div className="text-center">
+                            <h2 className="text-sm font-bold uppercase tracking-widest text-indigo-600">Why Choose Us</h2>
+                            <p className="mt-4 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+                                Expertise you can trust
+                            </p>
+                            <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-600">
+                                Our platform is built to provide students with the highest quality learning experience possible.
                             </p>
                         </div>
-
                     </div>
                 </section>
 
                 <TestSeriesSection />
-
-                <section className="py-20 lg:py-32">
-                    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                        <div className="relative overflow-hidden rounded-[3rem] bg-slate-900 py-16 px-8 shadow-2xl lg:px-20 lg:py-24">
-                            <div className="absolute -right-20 -bottom-20 h-64 w-64 rounded-full bg-indigo-500/10 blur-3xl"></div>
-                            <div className="absolute -left-20 -top-20 h-64 w-64 rounded-full bg-blue-500/10 blur-3xl"></div>
-
-                            <div className="relative grid gap-12 text-center lg:grid-cols-3 lg:text-left">
-                                <div>
-                                    <h2 className="text-3xl font-bold text-white lg:text-4xl">Proven results for every learner</h2>
-                                    <p className="mt-4 text-slate-400 text-lg">We help thousands of students achieve their academic goals through personalized attention.</p>
-                                </div>
-                                <div className="grid grid-cols-2 gap-8 lg:col-span-2">
-                                    <div className="space-y-2">
-                                        <p className="text-5xl font-black text-indigo-400">10k+</p>
-                                        <p className="text-sm font-bold uppercase tracking-wider text-slate-500">Active Students</p>
-                                    </div>
-                                    <div className="space-y-2">
-                                        <p className="text-5xl font-black text-blue-400">500+</p>
-                                        <p className="text-sm font-bold uppercase tracking-wider text-slate-500">Expert Tutors</p>
-                                    </div>
-                                    <div className="space-y-2">
-                                        <p className="text-5xl font-black text-indigo-400">50+</p>
-                                        <p className="text-sm font-bold uppercase tracking-wider text-slate-500">Subjects</p>
-                                    </div>
-                                    <div className="space-y-2">
-                                        <p className="text-5xl font-black text-blue-400">4.9/5</p>
-                                        <p className="text-sm font-bold uppercase tracking-wider text-slate-500">Average Rating</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <KeyFeatures />
             </main>
 
             <Footer />
