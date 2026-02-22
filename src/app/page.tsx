@@ -1,177 +1,78 @@
 import {
-    BookOpen,
-    Users,
-    Calendar,
-    Star,
-    ArrowRight,
-    CheckCircle2,
-    Search,
-    ChevronRight
+    ArrowUpRight,
+    Plus,
 } from "lucide-react";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
+import TestSeriesSection from "@/components/home/TestSeriesSection";
 
 export default function Home() {
     return (
-        <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-indigo-100 selection:text-indigo-900">
+        <div className="min-h-screen bg-[#FDFDFD] font-poppins text-slate-900 selection:bg-blue-100 selection:text-blue-900">
             <Navbar />
 
             <main className="pt-16">
-                <section className="relative overflow-hidden py-20 lg:py-32">
-                    <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 blur-3xl opacity-20">
-                        <div className="h-96 w-96 rounded-full bg-indigo-600"></div>
-                    </div>
-                    <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 blur-3xl opacity-10">
-                        <div className="h-96 w-96 rounded-full bg-blue-400"></div>
-                    </div>
+                <section className="relative overflow-hidden pt-[120px] pb-32 sm:pb-20 lg:pb-32 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 min-h-[90vh]">
+                    <div
+                        className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
+                        style={{
+                            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm1 1h38v38H1V1z' fill='%231852CC' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+                            backgroundSize: '40px 40px'
+                        }}
+                    ></div>
 
-                    <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                        <div className="grid items-center gap-12 lg:grid-cols-2">
-                            <div className="max-w-2xl text-center lg:text-left">
-                                <h1 className="text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl xl:text-7xl">
-                                    Unlock your <br />
-                                    <span className="bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">
-                                        academic potential
-                                    </span>
-                                </h1>
-                                <p className="mt-8 text-lg leading-relaxed text-slate-600 md:text-xl">
-                                    Connect with world-class tutors for personalized online lessons.
-                                    Tailored learning experiences that help you excel in any subject.
-                                </p>
+                    <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[600px] h-[600px] rounded-full bg-blue-100/50 blur-[100px] pointer-events-none z-0"></div>
+                    <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-indigo-100/40 blur-[100px] pointer-events-none z-0"></div>
 
-                                <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
-                                    <div className="relative w-full max-w-md">
-                                        <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400">
-                                            <Search size={20} />
-                                        </div>
-                                        <input
-                                            type="text"
-                                            placeholder="What do you want to learn?"
-                                            className="block w-full rounded-full border border-slate-200 bg-white py-4 pl-12 pr-4 text-sm shadow-sm transition-all focus:border-indigo-600 focus:ring-4 focus:ring-indigo-100 outline-none"
-                                        />
-                                    </div>
-                                    <button className="flex w-full items-center justify-center gap-2 rounded-full bg-slate-900 px-8 py-4 text-sm font-bold text-white transition-all hover:bg-slate-800 focus:ring-4 focus:ring-slate-100 sm:w-auto">
-                                        Search Now
-                                        <ArrowRight size={18} />
-                                    </button>
-                                </div>
+                    <div className="relative z-10 flex flex-col items-center max-w-4xl mx-auto">
 
-                                <div className="mt-8 flex items-center justify-center gap-4 lg:justify-start">
-                                    <div className="flex -space-x-3">
-                                        {[1, 2, 3, 4].map((i) => (
-                                            <div key={i} className="h-10 w-10 rounded-full border-2 border-white bg-slate-100 ring-2 ring-transparent transition-all hover:scale-110 hover:ring-indigo-400">
-                                                <img src={`https://i.pravatar.cc/150?u=${i}`} alt="user" className="h-full w-full rounded-full object-cover" />
-                                            </div>
-                                        ))}
-                                    </div>
-                                    <div className="text-sm">
-                                        <div className="flex items-center gap-1 font-bold text-slate-900">
-                                            <Star size={16} className="fill-yellow-400 text-yellow-400" />
-                                            4.9/5
-                                        </div>
-                                        <div className="text-slate-500 font-medium">from 20,000+ reviews</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="relative hidden lg:block">
-                                <div className="relative mx-auto h-[500px] w-full max-w-[500px]">
-                                    {/* Decorative card 1 */}
-                                    <div className="absolute -left-12 top-12 z-10 w-64 animate-float rounded-2xl bg-white p-6 shadow-2xl shadow-indigo-100/50 ring-1 ring-slate-100">
-                                        <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-green-50 text-green-600">
-                                            <CheckCircle2 size={24} />
-                                        </div>
-                                        <h3 className="font-bold text-slate-900">Vetted Tutors</h3>
-                                        <p className="mt-2 text-sm text-slate-500">Only the top 3% of applicants are selected.</p>
-                                    </div>
-
-                                    {/* Decorative card 2 */}
-                                    <div className="absolute bottom-12 -right-12 z-10 w-64 animate-float-delayed rounded-2xl bg-white p-6 shadow-2xl shadow-indigo-100/50 ring-1 ring-slate-100">
-                                        <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-orange-50 text-orange-600">
-                                            <Calendar size={24} />
-                                        </div>
-                                        <h3 className="font-bold text-slate-900">Flexible Schedule</h3>
-                                        <p className="mt-2 text-sm text-slate-500">Learn at your own pace, anytime, anywhere.</p>
-                                    </div>
-
-                                    {/* Main graphic */}
-                                    <div className="h-full w-full overflow-hidden rounded-3xl bg-indigo-50 ring-8 ring-indigo-50/50 transition-transform duration-500 hover:scale-[1.02]">
-                                        <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/20 via-transparent to-blue-400/20"></div>
-                                        <div className="flex h-full flex-col items-center justify-center p-12 text-center">
-                                            <div className="h-40 w-40 rounded-full bg-white shadow-xl flex items-center justify-center mb-8">
-                                                <BookOpen size={64} className="text-indigo-600" />
-                                            </div>
-                                            <h2 className="text-2xl font-bold text-slate-800">Master any subject</h2>
-                                            <div className="mt-6 flex flex-wrap justify-center gap-3">
-                                                {['Mathematics', 'Science', 'Coding', 'Languages'].map(subject => (
-                                                    <span key={subject} className="rounded-full bg-white/80 px-4 py-1.5 text-xs font-semibold text-indigo-700 shadow-sm backdrop-blur-sm">
-                                                        {subject}
-                                                    </span>
-                                                ))}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div className="flex items-center gap-3 bg-[#E9EFFC] rounded-full py-2 px-5 pr-2 mb-10 border border-white/50 shadow-sm transition-transform hover:-translate-y-1 cursor-pointer">
+                            <span className="text-[#1852CC] font-semibold text-sm pl-2">Get Started Now</span>
+                            <div className="bg-[#1852CC] rounded-full p-1.5 flex items-center justify-center">
+                                <ArrowUpRight size={16} className="text-white" />
                             </div>
                         </div>
-                    </div>
-                </section>
 
-                {/* Features Section */}
-                <section className="bg-slate-50 py-24">
-                    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                        <div className="text-center">
-                            <h2 className="text-sm font-bold uppercase tracking-widest text-indigo-600">Why Choose Us</h2>
-                            <p className="mt-4 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
-                                Expertise you can trust
-                            </p>
-                            <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-600">
-                                Our platform is built to provide students with the highest quality learning experience possible.
+                        <h1 className="text-[40px] sm:text-[52px] lg:text-[64px] font-medium leading-[1.1] tracking-tight mb-8">
+                            <span className="block text-[#171717]">Unlock Your</span>
+                            <span className="block text-[#171717]">Academic Potential</span>
+                            <span className="block text-slate-500 mt-2">With ScoreIT</span>
+                        </h1>
+
+                        <div className="my-6">
+                            <Plus size={32} strokeWidth={1} className="text-[#1852CC] opacity-60" />
+                        </div>
+
+                        <p className="max-w-[540px] text-[16px] sm:text-[18px] text-slate-500 leading-relaxed mb-12">
+                            Simplify your learning journey. Our intuitive platform makes connecting with top-tier tutors effortless.
+                        </p>
+
+                        <div className="flex flex-col items-center gap-4 mt-8">
+                            <div className="flex items-center gap-4">
+                                <div className="flex -space-x-3">
+                                    {[1, 2, 3].map((i) => (
+                                        <div key={i} className="h-12 w-12 rounded-full border-[3px] border-[#FDFDFD] bg-slate-100 shadow-sm overflow-hidden z-[4-i]">
+                                            <img src={`https://i.pravatar.cc/150?u=${i + 10}`} alt={`user ${i}`} className="h-full w-full object-cover" />
+                                        </div>
+                                    ))}
+                                </div>
+                                <div className="text-[32px] sm:text-[40px] font-medium text-[#171717] tracking-tight">
+                                    2.3M+
+                                </div>
+                            </div>
+                            <p className="text-sm text-slate-500 font-medium">
+                                Trusted to use by active students over 140 countries
                             </p>
                         </div>
 
-                        <div className="mt-20 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                            {[
-                                {
-                                    title: "Expert Tutors",
-                                    desc: "Learn from subject matter experts and certified teachers with years of experience.",
-                                    icon: <Users className="text-indigo-600" />,
-                                    bg: "bg-indigo-50"
-                                },
-                                {
-                                    title: "Interactive Sessions",
-                                    desc: "Engage in real-time with our collaborative whiteboard and video learning tools.",
-                                    icon: <Users className="text-blue-600" />,
-                                    bg: "bg-blue-50"
-                                },
-                                {
-                                    title: "Progress Tracking",
-                                    desc: "Visualize your growth with detailed analytics and regular feedback reports.",
-                                    icon: <Star className="text-yellow-600" />,
-                                    bg: "bg-yellow-50"
-                                }
-                            ].map((feature, idx) => (
-                                <div key={idx} className="group relative rounded-3xl bg-white p-8 shadow-sm transition-all hover:-translate-y-2 hover:shadow-xl hover:shadow-indigo-100">
-                                    <div className={`mb-6 flex h-14 w-14 items-center justify-center rounded-2xl ${feature.bg} transition-transform group-hover:scale-110 group-hover:rotate-6`}>
-                                        {feature.icon}
-                                    </div>
-                                    <h3 className="text-xl font-bold text-slate-900">{feature.title}</h3>
-                                    <p className="mt-4 leading-relaxed text-slate-600">{feature.desc}</p>
-                                    <a href="#" className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-indigo-600">
-                                        Learn more
-                                        <ChevronRight size={16} />
-                                    </a>
-                                </div>
-                            ))}
-                        </div>
                     </div>
                 </section>
 
-                {/* Stats Section */}
+                <TestSeriesSection />
+
                 <section className="py-20 lg:py-32">
                     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div className="relative overflow-hidden rounded-[3rem] bg-slate-900 py-16 px-8 shadow-2xl lg:px-20 lg:py-24">
-                            {/* Decorative elements */}
                             <div className="absolute -right-20 -bottom-20 h-64 w-64 rounded-full bg-indigo-500/10 blur-3xl"></div>
                             <div className="absolute -left-20 -top-20 h-64 w-64 rounded-full bg-blue-500/10 blur-3xl"></div>
 
