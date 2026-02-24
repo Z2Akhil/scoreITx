@@ -17,11 +17,11 @@ export default function KeyFeatures() {
     restDelta: 0.001
   });
 
-  const varietyX = useTransform(smoothProgress, [0, 1], [-250, -500]);
+  const varietyX = useTransform(smoothProgress, [0, 1], [-120, -500]);
   const varietyY = useTransform(smoothProgress, [0, 1], [0, 0]);     // remove Y
   const varietyScale = useTransform(smoothProgress, [0, 1], [1, 1]); // remove scale
 
-  const featuresX = useTransform(smoothProgress, [0, 1], [250, 500]);
+  const featuresX = useTransform(smoothProgress, [0, 1], [120, 500]);
   const featuresY = useTransform(smoothProgress, [0, 1], [0, 0]);
   const featuresScale = useTransform(smoothProgress, [0, 1], [1, 1]);
 
