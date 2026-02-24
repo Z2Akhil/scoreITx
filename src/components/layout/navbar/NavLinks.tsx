@@ -3,14 +3,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { AnimatedText } from "@/components/ui/animated-text";
+import { RollingText } from "@/components/ui/rolling-text";
 
 const N_LINKS = [
-    { name: "Home", href: "/" },
-    { name: "Find Tutors", href: "/tutors" },
-    { name: "How it Works", href: "/how-it-works" },
-    { name: "Pricing", href: "/pricing" },
-    { name: "Become a Tutor", href: "/become-tutor" },
+    { name: "Home", href: "/#hero" },
+    { name: "Why ScoreIT", href: "/#why-scoreit" },
+    { name: "Dashboard", href: "/#dashboard" },
+    { name: "Features", href: "/#features" },
+    { name: "Partner", href: "/#partner-form" },
 ];
 
 export default function NavLinks() {
@@ -36,12 +36,11 @@ export default function NavLinks() {
                                     : "bg-transparent text-slate-600"
                             }`}
                     >
-                        {/* Active Indicator Dot (Only on active, NOT hover) */}
                         <span
                             className={`w-1.5 h-1.5 rounded-full bg-[#1852CC] transition-all duration-300 ${isActive ? "opacity-100 scale-100" : "opacity-0 scale-0 w-0"
                                 }`}
                         />
-                        <AnimatedText text={link.name} groupHoverClass="group-hover/link" />
+                        <RollingText text={link.name} groupHoverClass="group-hover/link" />
                     </Link>
                 );
             })}

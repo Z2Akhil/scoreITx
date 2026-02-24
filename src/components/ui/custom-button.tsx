@@ -1,6 +1,7 @@
 import React from 'react';
-import { AnimatedText } from './animated-text';
+import { RollingText } from './rolling-text';
 import { cn } from '@/lib/utils'; 
+
 interface CustomButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
   variant?: 'primary' | 'secondary' | 'outline' | 'white';
@@ -18,22 +19,22 @@ export function CustomButton({
   ...props 
 }: CustomButtonProps) {
   const variants = {
-    primary: 'bg-[#1852CC] text-white hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/30',
-    secondary: 'bg-slate-900 text-white hover:bg-slate-800 hover:shadow-lg hover:shadow-slate-500/30',
-    outline: 'border-2 border-[#1852CC] text-[#1852CC] hover:bg-[#1852CC] hover:text-white',
-    white: 'bg-white text-[#1852CC] hover:bg-slate-50 hover:shadow-md',
+    primary: 'bg-[#1852CC] text-white hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/30 font-medium',
+    secondary: 'bg-slate-900 text-white hover:bg-slate-800 hover:shadow-lg hover:shadow-slate-500/30 font-medium',
+    outline: 'border-2 border-[#1852CC] text-[#1852CC] hover:bg-[#1852CC] hover:text-white font-medium',
+    white: 'bg-white text-[#1852CC] hover:bg-slate-50 hover:shadow-md font-medium',
   };
 
-  const baseStyles = 'relative overflow-hidden inline-flex items-center justify-center rounded-full px-8 py-3.5 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.97]';
+  const baseStyles = 'relative overflow-hidden inline-flex items-center justify-center rounded-full px-8 py-3.5 text-sm transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.97]';
   
   const hoverClass = groupClass.replace('group/', 'group-hover/');
-  const content = <AnimatedText text={text} groupHoverClass={hoverClass} />;
+  const content = <RollingText text={text} groupHoverClass={hoverClass} />;
 
   if (href) {
     return (
       <a 
         href={href} 
-        className={`${baseStyles} ${variants[variant]} ${groupClass} ${className}`}
+        className={cn(baseStyles, variants[variant], groupClass, className)}
       >
         {content}
       </a>
@@ -42,7 +43,7 @@ export function CustomButton({
 
   return (
     <button 
-      className={`${baseStyles} ${variants[variant]} ${groupClass} ${className}`}
+      className={cn(baseStyles, variants[variant], groupClass, className)}
       {...props}
     >
       {content}

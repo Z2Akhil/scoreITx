@@ -1,6 +1,6 @@
 import { GraduationCap } from "lucide-react";
 import Link from "next/link";
-import { AnimatedText } from "@/components/ui/animated-text";
+import { RollingText } from "@/components/ui/rolling-text";
 
 export default function NavLogo() {
     return (
@@ -11,10 +11,10 @@ export default function NavLogo() {
             </div>
             <div className="text-xl font-bold tracking-tight flex">
                 <div className="text-slate-900">
-                    <AnimatedText text="Score" groupHoverClass="group-hover/logo" />
+                    <RollingText text="Score" groupHoverClass="group-hover/logo" />
                 </div>
                 <div className="text-[#1852CC]">
-                    <AnimatedText text="IT" groupHoverClass="group-hover/logo" />
+                    <RollingText text="IT" groupHoverClass="group-hover/logo" />
                 </div>
             </div>
         </Link>

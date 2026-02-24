@@ -26,8 +26,15 @@ export default function KeyFeatures() {
   const featuresScale = useTransform(smoothProgress, [0, 1], [1, 1]);
 
   return (
-    <section className="bg-white py-24 w-full overflow-hidden">
-      <div className="w-full max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+    <section className="relative bg-white py-24 w-full overflow-hidden">
+      <div
+        className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
+        style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm1 1h38v38H1V1z' fill='%231852CC' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+            backgroundSize: '40px 40px'
+        }}
+      ></div>
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
 
         {/* Header - Centered as in design */}
         <div className="text-center mb-20 flex flex-col items-center">

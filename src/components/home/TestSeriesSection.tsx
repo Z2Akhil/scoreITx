@@ -1,6 +1,6 @@
 import { Users, Star, CheckCircle2 } from "lucide-react";
 import MobileMockup from "@/components/shared/MobileMockup";
-import { AnimatedText } from "@/components/ui/animated-text";
+import { RollingText } from "@/components/ui/rolling-text";
 
 export default function TestSeriesSection() {
     return (
@@ -9,12 +9,10 @@ export default function TestSeriesSection() {
             <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-[#F8FAFC] to-[#F8FAFC]"></div>
 
             <div
-                className="absolute inset-x-0 top-0 h-full z-0 opacity-[0.03] pointer-events-none"
+                className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
                 style={{
                     backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm1 1h38v38H1V1z' fill='%231852CC' fill-rule='evenodd'/%3E%3C/svg%3E")`,
-                    backgroundSize: '40px 40px',
-                    maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 40%, transparent 100%)',
-                    WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 40%, transparent 100%)'
+                    backgroundSize: '40px 40px'
                 }}
             ></div>
 
@@ -64,7 +62,7 @@ export default function TestSeriesSection() {
                                             <div className="text-xl font-bold">78.5%</div>
                                         </div>
                                         <button className="group/va relative overflow-hidden bg-white text-[#1852CC] px-4 py-1.5 rounded-full text-xs font-bold shadow-sm transition-transform hover:scale-105 active:scale-95">
-                                            <AnimatedText text="View Analytics" groupHoverClass="group-hover/va" />
+                                            <RollingText text="View Analytics" groupHoverClass="group-hover/va" />
                                         </button>
                                     </div>
                                 </div>
