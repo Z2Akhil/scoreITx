@@ -9,11 +9,11 @@ export default function Footer() {
                         <GraduationCap size={18} />
                     </div>
                     <span className="text-lg font-bold tracking-tight text-slate-900">
-                        Tution<span className="text-indigo-600">App</span>
+                        ScoreIT
                     </span>
                 </div>
                 <p className="text-slate-500 text-sm">
-                    © 2026 TutionApp. All rights reserved.
+                    © {new Date().getFullYear()} TutionApp. All rights reserved.
                     <span className="mx-2 hidden sm:inline">|</span>
                     <br className="sm:hidden" />
                     Empowering students worldwide.

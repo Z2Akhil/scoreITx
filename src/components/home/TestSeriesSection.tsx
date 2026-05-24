@@ -1,7 +1,7 @@
 import { Users, Star, CheckCircle2 } from "lucide-react";
 import MobileMockup from "@/components/shared/MobileMockup";
 import { RollingText } from "@/components/ui/rolling-text";
-
+import Link from "next/link";
 export default function TestSeriesSection() {
     return (
         <section className="relative z-20 -mt-32 pt-32 pb-24 sm:pb-32 overflow-hidden">
@@ -61,9 +61,9 @@ export default function TestSeriesSection() {
                                             <div className="text-white/70 text-[10px] uppercase tracking-wider mb-1">Avg Score</div>
                                             <div className="text-xl font-bold">78.5%</div>
                                         </div>
-                                        <button className="group/va relative overflow-hidden bg-white text-[#1852CC] px-4 py-1.5 rounded-full text-xs font-bold shadow-sm transition-transform hover:scale-105 active:scale-95">
+                                        <Link href="/#partner-form" className="group/va relative overflow-hidden bg-white text-[#1852CC] px-4 py-1.5 rounded-full text-xs font-bold shadow-sm transition-transform hover:scale-105 active:scale-95 text-center">
                                             <RollingText text="View Analytics" groupHoverClass="group-hover/va" />
-                                        </button>
+                                        </Link>
                                     </div>
                                 </div>
 
